@@ -36,8 +36,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             Exercicio1AndroidStudioTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-//                   BacicComponentsScreen(modifier = Modifier.padding(innerPadding))
-                    TelaGameOver(modifier = Modifier.padding(innerPadding))
+                   BacicComponentsScreen(modifier = Modifier.padding(innerPadding))
+//                    TelaGameOver(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
@@ -131,10 +131,28 @@ fun BacicComponentsScreen(modifier: Modifier = Modifier) {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(20.dp, Alignment.Bottom)
         ) {
+            ImgMunicao(
+                modifier = Modifier
+                    .padding(150.dp, 0.dp, 0.dp, 0.dp)
+                    .size(80.dp)
+            )
+
+            ImgMunicao(
+                modifier = Modifier
+                    .padding(0.dp, 0.dp, 150.dp, 0.dp)
+                    .size(80.dp)
+            )
+
+            ImgMunicao(
+                modifier = Modifier
+                    .align(Alignment.Start)
+                    .padding(30.dp, 0.dp, 0.dp, 0.dp)
+                    .size(80.dp)
+            )
+
             ImgArma(
                 modifier = Modifier
-                    .size(120.dp),
-                color = Color.White
+                    .size(120.dp)
             )
             Box(
                 modifier = Modifier
@@ -226,10 +244,19 @@ fun ImgInimigos(modifier: Modifier = Modifier, color: Color) {
 }
 
 @Composable
-fun ImgArma(modifier: Modifier = Modifier, color: Color) {
+fun ImgArma(modifier: Modifier = Modifier) {
     Image(
         modifier = modifier,
         painter = painterResource(R.drawable.pistola),
+        contentDescription = "Arminha"
+    )
+}
+
+@Composable
+fun ImgMunicao(modifier: Modifier = Modifier) {
+    Image(
+        modifier = modifier,
+        painter = painterResource(R.drawable.municao),
         contentDescription = "Cubo Mágico"
     )
 }
