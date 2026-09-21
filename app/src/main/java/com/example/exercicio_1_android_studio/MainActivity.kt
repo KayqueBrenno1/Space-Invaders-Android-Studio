@@ -59,7 +59,7 @@ fun BacicComponentsScreen(modifier: Modifier = Modifier) {
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(10.dp, 30.dp),
+                    .padding(10.dp, 35.dp),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Text(
@@ -92,7 +92,8 @@ fun BacicComponentsScreen(modifier: Modifier = Modifier) {
             }
             Row(
                 modifier = Modifier
-                    .fillMaxWidth(),
+                    .fillMaxWidth()
+                    .padding(0.dp, 50.dp),
                 horizontalArrangement = Arrangement.Center
             ) {
                 ImgInimigos(
@@ -130,9 +131,10 @@ fun BacicComponentsScreen(modifier: Modifier = Modifier) {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(20.dp, Alignment.Bottom)
         ) {
-            ImgCubo(
+            ImgArma(
                 modifier = Modifier
-                    .size(80.dp)
+                    .size(120.dp),
+                color = Color.White
             )
             Box(
                 modifier = Modifier
@@ -168,34 +170,34 @@ fun TelaGameOver(modifier: Modifier = Modifier) {
         ) {
             ImgInimigos(
                 modifier = Modifier
-                    .size(70.dp),
+                    .size(60.dp),
                 color = Color.Green
             )
             ImgInimigos(
                 modifier = Modifier
-                    .size(70.dp),
+                    .size(60.dp),
                 color = Color.Yellow
             )
             ImgInimigos(
                 modifier = Modifier
-                    .size(70.dp),
+                    .size(60.dp),
                 color = Color.Red
             )
             ImgInimigos(
                 modifier = Modifier
-                    .size(70.dp),
+                    .size(60.dp),
                 color = Color.Magenta
             )
             ImgInimigos(
                 modifier = Modifier
-                    .size(70.dp),
+                    .size(60.dp),
                 color = Color.Cyan
             )
         }
 
         Text(
             text = "GAME OVER",
-            fontWeight = FontWeight.Bold,
+            fontWeight = FontWeight.SemiBold,
             fontSize = 70.sp,
             color = Color.White
         )
@@ -224,10 +226,10 @@ fun ImgInimigos(modifier: Modifier = Modifier, color: Color) {
 }
 
 @Composable
-fun ImgCubo(modifier: Modifier = Modifier) {
+fun ImgArma(modifier: Modifier = Modifier, color: Color) {
     Image(
         modifier = modifier,
-        painter = painterResource(R.drawable.cubo_magico),
+        painter = painterResource(R.drawable.pistola),
         contentDescription = "Cubo Mágico"
     )
 }
